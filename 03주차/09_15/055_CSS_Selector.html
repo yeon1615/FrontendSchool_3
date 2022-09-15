@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div[class] {
+        font-size: 10px;
+      }
+      a[href] {
+        font-size: 10px;
+      }
+      a[href="https://www.paullab.co.kr"]
+      {
+        font-size: 32px;
+      }
+      div[class~='weniv'] {
+        color: red;
+      }
+      div.weniv {
+      }
+    </style>
+  </head>
+  <body>
+    <div>hello world</div>
+    <div class="one">hello world</div>
+    <div class="">hello world</div>
+    <a>위니브</a>
+    <a href="https://www.paullabs.co.kr">위니브</a>
+    <a href="https://www.paullab.co.kr">위니브</a>
+    <div class="weniv">hello</div>
+    <!-- 공백을 기준으로 완전한 weniv가 아니므로 적용되지 않음 -->
+    <div class="wenivs">hello</div>
+    <div class="weniv we">hello</div>
+    <div class="we weniv we">hello</div>
+  </body>
+</html>
