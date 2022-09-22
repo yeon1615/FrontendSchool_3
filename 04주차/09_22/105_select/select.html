@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>select</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      :root {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+      }
+      .txt-hide {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin-left: -1px;
+        overflow: hidden;
+      }
+      .cont-select {
+        width: 200px;
+        margin: 100px auto 0;
+        position: relative;
+      }
+      .btn-select {
+        width: 100%;
+        padding: 11px 20px 11px 13px;
+        text-align: left;
+        border: 1px solid #9b51e0;
+        border-radius: 10px;
+        background: url(./icon-Triangle-down.png);
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .btn-select:focus {
+        outline: 3px solid #f8e4ff;
+        border-radius: 10px;
+      }
+      .btn-select.on {
+        background: url(./icon-Triangle-up.png);
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+      }
+      .btn-select.on + .list-member {
+        display: block;
+      }
+
+      .list-member {
+        /* display: none; */
+        position: absolute;
+        top: 49px;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+      }
+
+      .list-member li {
+        padding: 5px 7px;
+      }
+      .list-member li button {
+        width: 100%;
+        padding: 7px 10px;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: left;
+        cursor: pointer;
+      }
+      .list-member li button:hover,
+      .list-member li button:focus {
+        background: #f8e4ff;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="cont-select">
+      <h2 class="txt-hide">최애 프로그래밍 언어를 선택해주세요</h2>
+      <button type="button" class="btn-select">최애 프로그래밍 언어</button>
+      <ul class="list-member">
+        <li><button type="button">Python</button></li>
+        <li><button type="button">Java</button></li>
+        <li><button type="button">JavaScript</button></li>
+        <li><button type="button">C#</button></li>
+        <li><button type="button">C/C++</button></li>
+      </ul>
+    </article>
+  </body>
+</html>
