@@ -1,0 +1,20 @@
+// 한줄 주석
+/*여러줄 주석*/
+
+ul {
+  li {
+    color: red;
+  }
+}
+.one {
+  color: red;
+  .two {
+    color: green;
+    .three {
+      color: blue;
+    }
+    .four {
+      color: purple;
+    }
+  }
+}
