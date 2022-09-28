@@ -1,0 +1,8 @@
+//#{$변수명}
+
+@for $hojun from 1 through 3 {
+  .profile-#{$hojun} {
+    background-image: url('../assets/profile#{$hojun}.png');
+    font-size: #{$hojun * 10}px;
+  }
+}
