@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!-- <button>Make me MORE!</button>
+    <ul></ul> -->
+    <div id="parentElement">
+      <span id="childElement">hello guys~</span>
+    </div>
+    <script>
+      const span = document.createElement('span');
+      const myText = document.createTextNode('good morning!');
+      // span.createTextNode() ❌
+      span.appendChild(myText);
+      const sibling = document.getElementById('childElement');
+      const parentDiv = document.getElementById('parentElement');
+      parentDiv.insertBefore(span, sibling);
+      // const myBtn = document.querySelector('button');
+      // const myUl = document.querySelector('ul');
+
+      // myBtn.addEventListener('click', function () {
+      //   for (let i = 0; i < 5; i++) {
+      //     const myLi = document.createElement('li');
+      //     const myTxt = document.createTextNode('안녕하세용!!');
+      //     myUl.appendChild(myLi);
+      //     myLi.appendChild(myTxt);
+      //   }
+      // });
+    </script>
+  </body>
+</html>
