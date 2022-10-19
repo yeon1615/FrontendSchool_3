@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .container {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="input" />
+      <textarea name="" id="textArea" cols="30" rows="10"></textarea>
+      <button id="btnWrite">메모</button>
+    </div>
+
+    <ul class="display"></ul>
+    <script>
+      const input = document.querySelector('#input');
+      const textArea = document.querySelector('#textArea');
+      const btnWrite = document.querySelector('#btnWrite');
+      const displayArea = document.querySelector('.display');
+      const memoList = [];
+      const savedMemo = JSON.parse(localStorage.getItem('메모'));
+
+      btnWrite.addEventListener('click', saveMemo);
+      function saveMemo() {
+        const memoFormat = {
+          title: input.value,
+          content: textArea.value,
+        };
+        memoList.push(memoFormat);
+        localStorage.setItem('메모', JSON.stringify(memoList));
+        const parsedMemoList = JSON.parse(localStorage.getItem('메모'));
+
+        const list = document.createElement('li');
+        const title = document.createElement('h2');
+        const content = document.createElement('p');
+        displayArea.appendChild(list);
+        parsedMemoList.forEach((item) => {
+          title.textContent = item.title;
+          content.textContent = item.content;
+          list.appendChild(title);
+          list.appendChild(content);
+        });
+      }
+    </script>
+  </body>
+</html>

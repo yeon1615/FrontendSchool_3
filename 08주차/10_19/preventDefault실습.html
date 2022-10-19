@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <form action="">
+      <button type="submit" class="submit">제출</button>
+    </form>
+    <script>
+      //   document.addEventListener('contextmenu', (event) => {
+      //     event.preventDefault();
+      //     alert('해당 페이지에서는 오른쪽 클릭을 제한합니다.');
+      //   });
+      const submit = document.querySelector('.submit');
+      submit.addEventListener('click', (event) => {
+        console.log('clicked');
+        event.preventDefault();
+        event.stopPropagation();
+      });
+
+      document.body.addEventListener(
+        'click',
+        () => {
+          console.log('event still alive!');
+        }
+        // true
+      );
+    </script>
+  </body>
+</html>

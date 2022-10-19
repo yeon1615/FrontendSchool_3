@@ -1,0 +1,58 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>위니브 스토어</title>
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="src/style/style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById('root');
+
+      async function getProductData() {
+        const response = await fetch('http://test.api.weniv.co.kr/mall');
+        const product = response.json();
+        return product;
+      }
+      // getProductData()는 프로미스를 반환하므로 .then 하거나 await 붙여줘야 한다!
+      // 위에서 async await 사용했으므로 원래는 하나로 통일하는 게 좋다
+      getProductData()
+        .then((product) => {
+          // console.log(product);
+          const mainElement = document.createElement('main');
+          mainElement.classList.add('product');
+          // console.log(mainElement);
+          // 코드가 길어지므로 여기서는 innerHTML으로 하지만, 사실은 통일성을 해친 것
+          // innerHTML이나 DOM 컨트롤 중에 하나로 통일하는 게 좋다
+          mainElement.innerHTML = `
+            <h1 class="ir">상품목록</h1>
+            <ul class="product-list"></ul>
+          `;
+          const productList = mainElement.querySelector('.product-list');
+          product.forEach((item) => {
+            const productDetailLink = document.createElement('a');
+            productDetailLink.href = `/datail/${item.id}`;
+            productDetailLink.innerHTML = `
+            <li>
+                <div>${item.thumbnailImg}</div>
+                <div>${item.productName}</div>
+                <div>${item.price}</div>
+            </li>
+            `;
+            // console.log(productDetailLink);
+            productList.append(productDetailLink);
+            console.log(mainElement);
+          });
+        })
+        .then()
+        .catch();
+    </script>
+  </body>
+</html>
