@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // function NewFactory(name) {
+      //   this.name = name;
+      //   this.sayYourName = function () {
+      //     console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      //   };
+      // }
+
+      // const robot1 = new NewFactory('게리');
+      // const robot2 = new NewFactory('뮤라');
+      // const robot3 = new NewFactory('알리');
+
+      function NewFactory2(name) {
+        this.name = name;
+      }
+
+      NewFactory2.prototype.sayYourName = function () {
+        console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      };
+    </script>
+  </body>
+</html>

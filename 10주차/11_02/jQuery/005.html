@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="one" />
+    <input type="text" id="two" />
+    <p id="three">hello</p>
+    <button id="four">클릭해!</button>
+
+    <script>
+      $('#four').click(function () {
+        let value = $('#one').val();
+        $('#one').val('');
+        $('#two').val(value);
+        $('#three').text(value);
+      });
+    </script>
+  </body>
+</html>
