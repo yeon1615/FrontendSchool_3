@@ -1,0 +1,11 @@
+.likeBtnOn {
+  width: 18px;
+  height: 18px;
+  background: url(../assets/icon-heart-on.svg) no-repeat center / cover;
+}
+
+.likeBtnOff {
+  width: 18px;
+  height: 18px;
+  background: url(../assets/icon-heart.svg) no-repeat center / cover;
+}
